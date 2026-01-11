@@ -1,0 +1,21 @@
+sys = tf([5, 12], [1, 5, 6]);
+w = logspace(-1, 2, 200);
+bode(sys, w);
+grid on;
+
+sys = tf([5, 12], [1, 5, 6]);
+[Mag,Pha,w] = bode(sys);
+Mag = squeeze(Mag);
+Pha = squeeze(Pha);
+subplot(2,1,1); 
+h = loglog(w,Mag,'k');
+set(gca, 'XTickLabel',[]); 
+ylabel('A');
+set(h,'LineWidth',2); 
+grid on;
+subplot(2,1,2); 
+h = semilogx(w,Pha,'k');
+set(h,'LineWidth',2); 
+grid on;
+ylabel('Fi,град'); 
+xlabel('\omega, рад/c');

@@ -1,0 +1,10 @@
+sys = tf(2, [1, 2]);
+w = 0:0.1:36;
+pq = shiftdim(freqresp(sys, w));
+subplot(2, 2, 1);
+plot(real(pq), imag(pq))
+grid on;
+xlabel("Im");
+ylabel("Re");
+
+num 
