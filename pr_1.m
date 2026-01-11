@@ -1,0 +1,60 @@
+% Пример 1.1
+
+syms y(t)
+
+eqn = 4 * diff(y, t) + 2 * y(t) == 8;
+cond = y(0) == 0;
+
+sol = dsolve(eqn, cond);
+disp(sol);
+
+figure;
+fplot(sol, [0, 10]);
+title("Ex 1.1");
+
+% Пример 1.2
+
+syms y(t)
+
+eqn = diff(y, t, 2) + 2 * diff(y, t) + 5 * y == 0;
+Dy = diff(y, t);
+cond = [y(0) == -3, Dy(0) == -1];
+
+sol = dsolve(eqn, cond);
+disp("Ex 1.2: ");
+disp(sol);
+
+figure;
+fplot(sol, [0, 10]);
+title("Ex 1.2");
+
+% Пример 1.3
+
+syms y(t);
+
+eqn = diff(y, t, 2) + 7 * diff(y, t) + 12 * y(t) == exp(-2 * t);
+Dy = diff(y, t);
+cond = [y(0) == 2, Dy(0) == 3];
+
+sol = dsolve(eqn, cond);
+disp("Ex 1.3: ");
+disp(sol);
+
+figure;
+fplot(sol, [0, 3]);
+title("Ex 1.3");
+
+% Задача 15
+syms y(t);
+
+eqn = diff(y, t, 2) + 2 * diff(y, t) + 10 * y(t) == 3 + 2 * t;
+Dy = diff(y, t);
+cond = [y(0) == 3, Dy(0) == 1];
+
+sol = dsolve(eqn, cond);
+disp("Task 15: ");
+disp(sol);
+
+figure;
+fplot(sol, [0, 10]);
+title("Task 15");
