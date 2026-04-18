@@ -1,0 +1,22 @@
+num = [2 1 1 3];
+den = [1 2 3 4];
+[A1, B1, C1, D1] = tf2ss(num, den);
+disp("A1");
+disp(A1);
+disp("B1");
+disp(B1);
+disp("C1");
+disp(C1);
+disp("D1");
+disp(D1);
+
+S = flipud(eye(3));
+[A, B, C, D] = ss2ss(A1, B1, C1, D1, S);
+disp("A");
+disp(A);
+disp("B");
+disp(B);
+disp("C");
+disp(C);
+disp("D");
+disp(D);

@@ -1,0 +1,13 @@
+num1 = 6;
+den1 = [1, 3];
+num2 = 3;
+den2 = [1, 2, 3];
+[num, den] = series(num1, den1, num2, den2);
+r = roots(den);
+disp(r);
+w = 0:0.02:20;
+[re, im, w] = nyquist(num, den, w);
+W = plot(re, im);
+grid on;
+xlabel('Re');
+ylabel('Im');

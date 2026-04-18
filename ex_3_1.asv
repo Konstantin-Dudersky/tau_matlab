@@ -1,0 +1,15 @@
+disp("1:")
+den = [1, 3, 2];
+p12 = roots(den);
+disp(p12);
+
+syms y(t);
+eqn = diff(y, t, 2) + 8 * diff(y, t) + 12 * y == 48;
+Dy = diff(y,t);
+cond = [y(0) == 0, Dy(0)==0];
+
+S = dsolve(eqn, cond);
+
+disp(S)
+
+fplot(S, [0, 5])
